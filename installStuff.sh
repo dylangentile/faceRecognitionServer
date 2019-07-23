@@ -1,5 +1,5 @@
 #! /bin/bash
-pip3 install face_recognition
-pip3 install wget
-pip3 install opencv-python
-pip3 install imutils
+sudo pip3 install face_recognition
+sudo pip3 install wget
+sudo pip3 install opencv-python
+sudo pip3 install imutils
