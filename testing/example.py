@@ -8,8 +8,9 @@ obama_image = face_recognition.load_image_file("obama.jpg")
 x = input('Enter the link: ');
 filename = wget.download(x);
 
+toleranceStr = input('enter the tolerance: ')
 unknown_image = face_recognition.load_image_file(filename)
-
+tolerance = float(toleranceStr)
 # Get the face encodings for each face in each image file
 # Since there could be more than one face in each image, it returns a list of encodings.
 # But since I know each image only has one face, I only care about the first encoding in each image, so I grab index 0.
@@ -29,7 +30,7 @@ known_faces = [
 
 
 # results is an array of True/False telling if the unknown face matched anyone in the known_faces array
-results = face_recognition.compare_faces(known_faces, unknown_face_encoding)
+results = face_recognition.compare_faces(known_faces, unknown_face_encoding, tolerance)
 if True in results:
 	print("yes")
 else:
